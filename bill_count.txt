@@ -1,0 +1,27 @@
+def bill_count(amount,bills):
+    bills.sort()
+    flag=0
+    for i in bills:
+        if i<0:
+            return "Invalid Input"
+            flag=1
+            break;
+    if amount<0:
+        return "Invalid Input"
+        flag=1
+    if flag==1:
+        return
+    else:
+        count=0
+        for i in reversed(bills):
+            x=amount//i
+            count+=x
+            if x>0:
+                amount-=i*x
+    return count
+#x=bill_count(1001,[1,20,10]) 
+#print(x)
+            
+        
+    
+    
